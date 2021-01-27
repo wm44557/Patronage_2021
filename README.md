@@ -1,2 +1,2 @@
-# Patronage_2021
-Marcin Wrzos Patronage 2021
+# Zadanie nr.1
+Marcin Wrzos  P-2020

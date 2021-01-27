@@ -3,7 +3,7 @@
 :root {
     --backgroundColor: rgba(255, 255, 255, 0.10);
     --boxShadowColor: rgba(31, 38, 135, 0.37);
-    --textShadowColor: rgba(206, 150, 150, 1);
+    --textShadowColor: rgba(256, 150, 150, 1);
 }
 
 *, *::after, *::before {
@@ -33,7 +33,6 @@ body {
     background: var(--backgroundColor);
     box-shadow: 0 8px 32px 0 var(--boxShadowColor);
     backdrop-filter: blur(8.0px);
-    -webkit-backdrop-filter: blur(8.0px);
     font-size: 2em;
     color: white;
     font-weight: 600;
@@ -43,6 +42,7 @@ body {
     justify-content: center;
     line-height: 10px;
     z-index: 999;
+    -webkit-backdrop-filter: blur(8.0px);
 }
 
 #moviesCountersContainer p {
@@ -59,11 +59,13 @@ body {
     background: var(--backgroundColor);
     box-shadow: 0 8px 32px 0 var(--boxShadowColor);
     backdrop-filter: blur(8.0px);
-    -webkit-backdrop-filter: blur(8.0px);
     list-style: none;
+    -webkit-backdrop-filter: blur(8.0px);
 }
 
 li {
+    display: flex;
+    flex-direction: column;
     position: relative;
     width: 80%;
     margin: 15px auto;
@@ -73,8 +75,6 @@ li {
     box-shadow: 0 8px 32px 0 var(--boxShadowColor);
     backdrop-filter: blur(8.0px);
     -webkit-backdrop-filter: blur(8.0px);
-    display: flex;
-    flex-direction: column;
 }
 
 .h2Title {
