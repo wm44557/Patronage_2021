@@ -39,9 +39,9 @@ moviesData.forEach(function (item, index) {
         newElement.dataset.id = item.id;
         newElement.className = "movie";
 
-        appendChild('h2', item.title, 'boy');
-        appendChild('p', item.year, 'boy');
-        appendChild('p', item.summary, 'boy');
+        appendChild('h2', item.title, 'h2Title');
+        appendChild('p', item.year, 'pYear');
+        appendChild('p', item.summary, 'pSummary');
         appendChild('div', item.seen, 'seenDiv', true);
 
         moviesListContainer.appendChild(newElement);
