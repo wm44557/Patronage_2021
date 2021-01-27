@@ -1,0 +1,13 @@
+.seenDiv {
+    height: 100px;
+    width: 100px;
+    background-color: red;
+    font-size: 32px;
+    color: white;
+}
+
+.seenDiv:hover {
+    cursor: pointer;
+    background-color: white;
+    color: red;
+}
