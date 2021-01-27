@@ -1,4 +1,4 @@
-const moviesData = [
+export const moviesData = [
     {
         "id": 1,
         "title": "The Shawshank Redemption",
