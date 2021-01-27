@@ -48,9 +48,4 @@ moviesData.forEach(function (item, index) {
     }
 );
 
-//
-// <!-- Obsłuży kliknięcie symbolu graficznego:-->
-// <!-- Przełączy wartość atrybutu „seen” w „moviesData” dla-->
-// <!--danego filmu-->
-// <!-- Zaktualizuje symbol na liście-->
-// <!-- Zaktualizuje licznik obejrzanych filmów-->
+
