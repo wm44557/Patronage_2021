@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
 
 :root {
-    --backgroundColor: rgba(255, 255, 255, 0.20);
+    --backgroundColor: rgba(255, 255, 255, 0.10);
     --boxShadowColor: rgba(31, 38, 135, 0.37);
     --textShadowColor: rgba(206, 150, 150, 1);
 }
@@ -12,6 +12,7 @@
 
 html {
     font-family: 'Montserrat', sans-serif;
+    color: white;
     margin: 100px 0;
 }
 
@@ -44,6 +45,10 @@ body {
     z-index: 999;
 }
 
+#moviesCountersContainer p {
+    text-shadow: 4px 4px 5px var(--textShadowColor);
+}
+
 #moviesListContainer {
     display: flex;
     flex-direction: column;
@@ -58,15 +63,79 @@ body {
     list-style: none;
 }
 
-.h2Title {
-    font-size: 3em;
-    color: white;
-    text-align: center;
-    text-shadow: 4px 4px 5px var(--textShadowColor);
+li {
+    position: relative;
+    width: 80%;
+    margin: 15px auto;
+    padding: 40px 40px;
+    border-radius: 4.5em;
+    background: var(--backgroundColor);
+    box-shadow: 0 8px 32px 0 var(--boxShadowColor);
+    backdrop-filter: blur(8.0px);
+    -webkit-backdrop-filter: blur(8.0px);
+    display: flex;
+    flex-direction: column;
 }
 
-.seenDiv:hover {
-    cursor: pointer;
-    background-color: white;
-    color: red;
+.h2Title {
+    font-size: 3em;
+    padding: 25px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 40%;
+    font-weight: 400;
 }
+
+.pYear {
+    font-size: 1.5em;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 5%;
+    padding-right: 9px;
+}
+
+.pSummary {
+    font-size: 1.5em;
+    font-weight: 300;
+    text-align: justify;
+    padding-top: 20px;
+}
+
+.fa-eye {
+    position: absolute;
+    font-size: 4em;
+    color: white;
+    top: 20px;
+    left: 20px;
+}
+
+.seenDiv {
+    text-decoration: underline;
+    cursor: pointer;
+    height: 0;
+    font-size: 1.5em;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+
+li:hover {
+    text-shadow: 7px 7px 7px var(--textShadowColor);
+}
+
+@media (max-width: 600px ) {
+    .h2Title {
+        padding: 3px;
+        font-size: 1.5em;
+    }
+
+    li {
+        width: 95%;
+    }
+
+    #moviesListContainer {
+        width: 85%;
+    }
+
+}
+

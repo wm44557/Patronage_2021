@@ -15,27 +15,38 @@ let itemChildListItem;
 
 const renderSeen = (datasetId, index) => {
     moviesData[index].seen = "T"
-    document.querySelector(`li[data-id='${datasetId}'] .seenDiv`).innerHTML = moviesData[index].seen;
+    // document.querySelector(`li[data-id='${datasetId}'] .seenDiv`).innerHTML = `T`;
+    document.querySelector(`li[data-id='${datasetId}'] .seenDiv`).innerHTML = `<i class="far fa-eye"></i>`;
     moviesCounter = moviesData.filter(item => item.seen === 'T');
+    console.log(moviesData)
     moviesCounterSeenDiv.textContent = String(moviesCounter.length);
 }
 
 
-const appendChild = (tagName, innerHTML, className, listener) => {
+const appendChild = (tagName, innerHTML, className, itemSeen) => {
     itemChildListItem = document.createElement(tagName)
     itemChildListItem.innerHTML = innerHTML;
     className ? itemChildListItem.className = className : null;
-    listener ? itemChildListItem.addEventListener('click', function (e) {
-        let datasetId = Number(e.target.parentElement.dataset.id)
-        moviesData.forEach((item, index) => item.id === datasetId ? renderSeen(datasetId, index) : null);
-    }) : null;
+    if (itemSeen) {
+        // itemChildListItem.innerHTML === "T" ? itemChildListItem.innerHTML = `T` : itemChildListItem.innerHTML = `F`;
+        itemChildListItem.innerHTML === "T" ? itemChildListItem.innerHTML = `<i class="far fa-eye"></i>` : itemChildListItem.innerHTML = `open movie`;
+        itemChildListItem.addEventListener('click', function (e) {
+            let datasetId = Number(e.target.parentElement.dataset.id)
+            moviesData.forEach((item, index) => item.id === datasetId ? renderSeen(datasetId, index) : null);
+        })
+    }
     newElement.appendChild(itemChildListItem);
 
 }
 
 moviesData.forEach(function (item, index) {
         newElement = document.createElement('li');
-        newElement.id = `list_item_${item.id}`;
+        newElement.id = `
+        list_item_$
+        {
+            item.id
+        }
+        `;
         newElement.dataset.id = item.id;
         newElement.className = "movie";
 
