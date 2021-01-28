@@ -41,12 +41,7 @@ const appendChild = (tagName, innerHTML, className, itemSeen) => {
 
 moviesData.forEach(function (item, index) {
         newElement = document.createElement('li');
-        newElement.id = `
-        list_item_$
-        {
-            item.id
-        }
-        `;
+        newElement.id = `list_item_${item.id}`;
         newElement.dataset.id = item.id;
         newElement.className = "movie";
 
